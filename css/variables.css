@@ -1,6 +1,6 @@
 :root {
   --btn-color: rgba(255, 255, 255, 0.794);
-  --player-1-color: #d8a9b9;
-  --player-2-color: #b47195;
+  --active-player-color: #d8a9b9;
+  --inactive-player-color: #b47195;
   --score-color: #971d4b;
 }

@@ -15,16 +15,25 @@ let player2 = {
 //dice saved as an array
 let dice = [0, 0];
 
+//players divs elements
+const player1Div = document.getElementById("player1-div");
+const player2Div = document.getElementById("player2-div");
+
 //dice elements
 const firstDiceImg = document.getElementById("dice-1");
 const secondDiceImg = document.getElementById("dice-2");
 
-// new game button element
+// all buttons elements
 const rollDiceBtn = document.getElementById("roll-dice-btn");
+const holdBtn = document.getElementById("hold-btn");
 
 // current scores elements
 const currentScorePlayer1 = document.getElementById("current-score-player1");
 const currentScorePlayer2 = document.getElementById("current-score-player2");
+
+//total scores elements
+const totalScorePlayer1 = document.getElementById("player1-total-score");
+const totalScorePlayer2 = document.getElementById("player2-total-score");
 
 /*functions*/
 
@@ -70,4 +79,37 @@ rollDiceBtn.addEventListener("click", function (e) {
   updateCurrentScore(dice);
   currentScorePlayer1.innerText = player1.currentScore;
   currentScorePlayer2.innerText = player2.currentScore;
+});
+
+// all events of hold button
+holdBtn.addEventListener("click", function (e) {
+  //add current to total score in player's object
+  if (player1.isPlayingNow) {
+    player1.totalScore += player1.currentScore;
+  } else if (player2.isPlayingNow) {
+    player2.totalScore += player2.currentScore;
+  }
+
+  //update innertext of total score element by updated player's object
+  totalScorePlayer1.innerText = player1.totalScore;
+  totalScorePlayer2.innerText = player2.totalScore;
+
+  //zero current score
+  player1.currentScore = 0;
+  player2.currentScore = 0;
+  currentScorePlayer1.innerText = 0;
+  currentScorePlayer2.innerText = 0;
+
+  //change who is the active player
+  player1.isPlayingNow = !player1.isPlayingNow;
+  player2.isPlayingNow = !player2.isPlayingNow;
+
+  //swap background colors with effect
+  if (player1.isPlayingNow) {
+    player1Div.style.backgroundColor = "var(--active-player-color)";
+    player2Div.style.backgroundColor = "var(--inactive-player-color)";
+  } else if (player2.isPlayingNow) {
+    player2Div.style.backgroundColor = "var(--active-player-color)";
+    player1Div.style.backgroundColor = "var(--inactive-player-color)";
+  }
 });
