@@ -77,3 +77,79 @@ ul {
 a {
   text-decoration: none;
 }
+
+/* style */
+body {
+  width: 100vw;
+  height: 100vh;
+  background: linear-gradient(
+    135deg,
+    rgb(160, 28, 52) 30%,
+    rgb(84, 30, 91) 70%
+  );
+  text-align: center;
+}
+
+.main-screen {
+  display: flex;
+  margin: 0 1rem;
+  justify-content: center;
+}
+.player1,
+.player2 {
+  width: 38%;
+  height: 100vh;
+}
+.player1 {
+  background-color: var(--player-1-color);
+}
+.player2 {
+  background-color: var(--player-2-color);
+}
+.player1 h2,
+.player2 h2 {
+  color: var(--score-color);
+  font-size: 3rem;
+}
+.new-game,
+.roll-dice,
+.hold {
+  height: 3vh;
+  width: 10vw;
+  position: absolute;
+
+  /* border-radius: 30%; */
+  /* background-color: var(--btn-color); */
+}
+.new-game button,
+.roll-dice button,
+.hold button {
+  cursor: pointer;
+}
+
+.new-game {
+  top: 2rem;
+}
+.roll-dice {
+  top: 35rem;
+}
+.hold {
+  top: 40rem;
+}
+.dice1,
+.dice2 {
+  background-color: white;
+  width: 10vw;
+  height: 10vh;
+  position: absolute;
+}
+.dice1 {
+  top: 10rem;
+}
+.dice2 {
+  top: 20rem;
+}
+.dice1 img,
+.dice2 img {
+  width: 100%;
+}
