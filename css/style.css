@@ -134,7 +134,7 @@ body {
   top: 35rem;
 }
 .hold {
-  top: 40rem;
+  top: 65rem;
 }
 .dice1,
 .dice2 {
@@ -152,4 +152,22 @@ body {
 .dice1 img,
 .dice2 img {
   width: 100%;
+}
+
+.current-player1,
+.current-player2 {
+  background-color: var(--score-color);
+  display: flex;
+  flex-direction: column;
+  height: 15vh;
+  width: 15vw;
+  color: white;
+  position: absolute;
+  top: 45rem;
+}
+.current-player1 {
+  left: 20rem;
+}
+.current-player2 {
+  right: 20rem;
 }
