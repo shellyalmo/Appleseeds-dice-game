@@ -1,15 +1,20 @@
 /*variables, constants, globals*/
 
+//target score
+let targetScore = 100;
+
 // players objects initialized
 let player1 = {
   totalScore: 0,
   currentScore: 0,
   isPlayingNow: true,
+  isWinner: false,
 };
 let player2 = {
   totalScore: 0,
   currentScore: 0,
   isPlayingNow: false,
+  isWinner: false,
 };
 
 //dice saved as an array
@@ -66,8 +71,17 @@ function updateCurrentScore(lastDiceResults) {
   }
 }
 
-// if the player rolls a double six all his round’s score
-// gets lost.After that, it's the next player’s turn.
+/**
+ * checks if current player reached the target score
+ *@param {Array} lastDiceResults
+ */
+function checkTargetScore(lastDiceResults) {
+  if (player1.isPlayingNow) {
+    player1.currentScore += dice[0] + dice[1];
+  } else if (player2.isPlayingNow) {
+    player2.currentScore += dice[0] + dice[1];
+  }
+}
 
 /*event listeners*/
 
