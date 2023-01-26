@@ -15,6 +15,13 @@ let player2 = {
 //dice saved as an array
 let dice = [0, 0];
 
+//dice elements
+const firstDiceImg = document.getElementById("dice-1");
+const secondDiceImg = document.getElementById("dice-2");
+
+// new game button element
+const rollDiceBtn = document.getElementById("roll-dice-btn");
+
 /*functions*/
 
 /**
@@ -33,8 +40,13 @@ function rollDice() {
   dice[0] = randomNumber();
   dice[1] = randomNumber();
 }
-rollDice();
-console.log(dice);
 
 // if the player rolls a double six all his round’s score
 // gets lost.After that, it's the next player’s turn.
+
+/*event listeners*/
+rollDiceBtn.addEventListener("click", function (e) {
+  rollDice();
+  firstDiceImg.setAttribute("src", `./assets/dice-${dice[0]}.png`);
+  secondDiceImg.setAttribute("src", `./assets/dice-${dice[1]}.png`);
+});
