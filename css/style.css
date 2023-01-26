@@ -134,20 +134,20 @@ body {
   top: 35rem;
 }
 .hold {
-  top: 65rem;
+  top: 60rem;
 }
 .dice1,
 .dice2 {
   background-color: white;
-  width: 10vw;
-  height: 10vh;
+  width: 8vw;
+  height: 8vh;
   position: absolute;
 }
 .dice1 {
-  top: 10rem;
+  top: 9rem;
 }
 .dice2 {
-  top: 20rem;
+  top: 21rem;
 }
 .dice1 img,
 .dice2 img {
