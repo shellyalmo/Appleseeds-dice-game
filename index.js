@@ -76,7 +76,22 @@ rollDiceBtn.addEventListener("click", function (e) {
   rollDice();
   firstDiceImg.setAttribute("src", `./assets/dice-${dice[0]}.png`);
   secondDiceImg.setAttribute("src", `./assets/dice-${dice[1]}.png`);
-  updateCurrentScore(dice);
+  //   double 6 zeros the current score
+  if (dice[0] === 6 && dice[1] === 6) {
+    player1.currentScore = 0;
+    player2.currentScore = 0;
+    player1.isPlayingNow = !player1.isPlayingNow;
+    player2.isPlayingNow = !player2.isPlayingNow;
+    if (player1.isPlayingNow) {
+      player1Div.style.backgroundColor = "var(--active-player-color)";
+      player2Div.style.backgroundColor = "var(--inactive-player-color)";
+    } else if (player2.isPlayingNow) {
+      player2Div.style.backgroundColor = "var(--active-player-color)";
+      player1Div.style.backgroundColor = "var(--inactive-player-color)";
+    }
+  } else {
+    updateCurrentScore(dice);
+  }
   currentScorePlayer1.innerText = player1.currentScore;
   currentScorePlayer2.innerText = player2.currentScore;
 });
