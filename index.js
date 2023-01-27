@@ -1,6 +1,7 @@
+"use strict";
 /*variables, constants, globals*/
 
-//target score
+//target score from user input
 let targetScore = 100;
 
 // players objects initialized
