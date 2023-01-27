@@ -73,13 +73,39 @@ function updateCurrentScore(lastDiceResults) {
 
 /**
  * checks if current player reached the target score
- *@param {Array} lastDiceResults
+ *
  */
-function checkTargetScore(lastDiceResults) {
+function checkTargetScore() {
   if (player1.isPlayingNow) {
-    player1.currentScore += dice[0] + dice[1];
+    if (player1.totalScore > targetScore) {
+      player2.isWinner = true;
+    } else if (player1.totalScore === targetScore) {
+      player1.isWinner = true;
+    }
   } else if (player2.isPlayingNow) {
-    player2.currentScore += dice[0] + dice[1];
+    if (player2.totalScore > targetScore) {
+      player1.isWinner = true;
+    } else if (player2.totalScore === targetScore) {
+      player2.isWinner = true;
+    }
+  }
+}
+
+/**
+ * prints winner message
+ *
+ */
+function printWinner() {
+  const winnerH2 = document.createElement("h2");
+  winnerH2.innerText = "WINNER!";
+  if (player1.isWinner === true) {
+    player1Div.appendChild(winnerH2);
+    document.getElementById("roll-dice-btn").disabled = true;
+    document.getElementById("hold-btn").disabled = true;
+  } else if (player2.isWinner === true) {
+    player2Div.appendChild(winnerH2);
+    document.getElementById("roll-dice-btn").disabled = true;
+    document.getElementById("hold-btn").disabled = true;
   }
 }
 
@@ -129,6 +155,8 @@ holdBtn.addEventListener("click", function (e) {
   currentScorePlayer1.innerText = 0;
   currentScorePlayer2.innerText = 0;
 
+  checkTargetScore();
+  printWinner();
   //change who is the active player
   player1.isPlayingNow = !player1.isPlayingNow;
   player2.isPlayingNow = !player2.isPlayingNow;
