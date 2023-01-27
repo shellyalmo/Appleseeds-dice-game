@@ -119,6 +119,11 @@ rollDiceBtn.addEventListener("click", function (e) {
   secondDiceImg.setAttribute("src", `./assets/dice-${dice[1]}.png`);
   //   double 6 zeros the current score
   if (dice[0] === 6 && dice[1] === 6) {
+    doubleSixModal.style.display = "block";
+    setTimeout(function () {
+      doubleSixModal.style.display = "none";
+    }, 2000);
+
     player1.currentScore = 0;
     player2.currentScore = 0;
     player1.isPlayingNow = !player1.isPlayingNow;

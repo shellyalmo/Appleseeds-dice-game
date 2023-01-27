@@ -8,6 +8,9 @@ const newGameBtn = document.getElementById("new-game-btn");
 // Get the button that closes the modal
 const startGameBtn = document.getElementById("start-game-btn");
 
+// get the double 6 modal
+const doubleSixModal = document.getElementById("double-six-modal");
+
 // When the user clicks the button, open the modal
 newGameBtn.onclick = function () {
   //refresh the page when starting a new game

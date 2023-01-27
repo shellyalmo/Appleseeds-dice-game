@@ -215,3 +215,8 @@ body {
   text-decoration: none;
   cursor: pointer;
 }
+
+/* double 6 modal */
+#double-six-modal {
+  display: none;
+}
