@@ -19,6 +19,39 @@
     <title>Rolling Dice Game</title>
   </head>
   <body>
+    <!-- The Modal -->
+    <div id="myModal" class="modal">
+      <!-- Modal content -->
+      <div class="modal-content">
+        <button class="close" id="start-game-btn">Start Game!</button>
+        <span
+          ><strong>Game instructions:</strong>
+          <ul>
+            <li>
+              In your turn - roll the dice (at least once) and accumulate the
+              result in "current".
+            </li>
+            <li>
+              You can roll again or click "Hold" to save the points from
+              "Current" and end the turn.
+            </li>
+            <li>
+              Note! if you get 6-6 you will lose all points from "Current" and
+              the turn will go to your opponent.
+            </li>
+            <li>
+              If you managed to reach exactly the target score - you win! If you
+              passed it - you lose.
+            </li>
+          </ul>
+        </span>
+        <div class="target-score-input">
+          <label for="targetscore">Target Score:</label>
+          <input type="number" id="targetscore" name="targetscore" />
+        </div>
+      </div>
+    </div>
+
     <div class="main-screen">
       <div class="player1" id="player1-div">
         <h1>PLAYER 1</h1>
@@ -28,7 +61,7 @@
         <h1>PLAYER 2</h1>
         <h2 id="player2-total-score">0</h2>
       </div>
-      <div class="new-game">
+      <div class="new-game" id="new-game-btn">
         <button>NEW GAME</button>
       </div>
       <div class="dice1">
@@ -54,5 +87,6 @@
       </div>
     </div>
     <script src="./index.js"></script>
+    <script src="./modal.js"></script>
   </body>
 </html>
