@@ -121,11 +121,6 @@ body {
   /* border-radius: 30%; */
   /* background-color: var(--btn-color); */
 }
-.new-game button,
-.roll-dice button,
-.hold button {
-  cursor: pointer;
-}
 
 .new-game {
   top: 2rem;
@@ -172,6 +167,10 @@ body {
   right: 20rem;
 }
 
+.btn {
+  cursor: pointer;
+}
+
 /*modal of game instructions and new game*/
 
 /* The Modal (background) */
@@ -213,7 +212,6 @@ body {
 .close:focus {
   color: #000;
   text-decoration: none;
-  cursor: pointer;
 }
 
 /* double 6 modal */
