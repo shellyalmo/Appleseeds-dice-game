@@ -1,8 +1,7 @@
 # Appleseeds-dice-game
 A Dice Roll Game written with html , css and vanilla JS for practicing DOM manipulation.
 This is a weekend project as part of my Appleseeds Fullstack Bootcamp.
-![image](https://user-images.githubusercontent.com/33236921/214872763-5b1ce4a2-4864-40ad-a701-80bf21bfb087.png)
-
+![image](https://user-images.githubusercontent.com/33236921/215281904-166d4193-e300-4b7d-bc91-20c247b2d281.png)
 
 
 ## Play the game here:
