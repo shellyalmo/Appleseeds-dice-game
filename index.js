@@ -131,11 +131,20 @@ function printWinner() {
 
 //all events of roll dice button
 rollDiceBtn.addEventListener("click", function (e) {
+  //add roll dice animation
+  firstDiceImg.classList.remove("roll-dice-animation");
+  secondDiceImg.classList.remove("roll-dice-animation");
+  void firstDiceImg.offsetHeight; //force page rerender
+  void secondDiceImg.offsetHeight;
+  firstDiceImg.classList.add("roll-dice-animation");
+  secondDiceImg.classList.add("roll-dice-animation");
+
   //add sound effect
   diceRollSound.play();
   rollDice();
   firstDiceImg.setAttribute("src", `./assets/images/dice-${dice[0]}.png`);
   secondDiceImg.setAttribute("src", `./assets/images/dice-${dice[1]}.png`);
+
   //   double 6 zeros the current score
   if (dice[0] === 6 && dice[1] === 6) {
     doubleSixModal.style.display = "block";
