@@ -95,6 +95,8 @@ body {
 .player2 {
   width: 38%;
   height: 100vh;
+  color: white;
+  font-weight: 600;
 }
 .player1 {
   background-image: url(http://www.transparenttextures.com/patterns/wood-pattern.png);
@@ -137,7 +139,6 @@ body {
   width: 8vw;
   height: 8vh;
   position: absolute;
-  border-radius: 1px solid black;
 }
 .dice1 {
   top: 12rem;
