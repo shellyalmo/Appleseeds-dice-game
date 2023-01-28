@@ -4,9 +4,9 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" type="image/x-icon" href="./assets/dice.ico" />
+    <link rel="icon" type="image/x-icon" href="./assets/images/dice.ico" />
 
-    <meta property="og:image" content="./assets/dice.png" />
+    <meta property="og:image" content="./assets/images/dice.pngdice.png" />
     <meta property="og:description" content="Dice Game by Shelly Almoznino" />
     <link rel="stylesheet" href="./css/style.css" />
     <link rel="stylesheet" href="./css/variables.css" />
@@ -18,7 +18,7 @@
     />
     <title>Rolling Dice Game</title>
   </head>
-  <body>
+  <body onload="autoPlayOpeningMusic()">
     <!-- The Modal -->
     <div id="myModal" class="modal">
       <!-- Modal content -->
@@ -72,10 +72,10 @@
         <button class="btn">NEW GAME</button>
       </div>
       <div class="dice1">
-        <img id="dice-1" src="./assets/dice-3.png" alt="" />
+        <img id="dice-1" src="./assets/images/dice-3.png" alt="" />
       </div>
       <div class="dice2">
-        <img id="dice-2" src="./assets/dice-5.png" alt="" />
+        <img id="dice-2" src="./assets/images/dice-5.png" alt="" />
       </div>
       <div class="roll-dice">
         <button class="btn" id="roll-dice-btn">ROLL DICE</button>
@@ -93,6 +93,15 @@
         <button class="btn" id="hold-btn">HOLD</button>
       </div>
     </div>
+    <!-- sound effects -->
+    <audio id="dice-roll-sound" src="./assets/sounds/roll-dice.mp3"></audio>
+    <audio id="winning-sound" src="./assets/sounds/winning-tada.mp3"></audio>
+    <audio
+      id="opening-screen-sound"
+      src="./assets/sounds/opening_screen_theme_song.mp3"
+    ></audio>
+    <audio id="sad-sound" src="./assets/sounds/Sad-trombone.mp3"></audio>
+    <audio id="switch-turn-sound" src="./assets/sounds/switch-turn.mp3"></audio>
     <script src="./index.js"></script>
     <script src="./modal.js"></script>
   </body>

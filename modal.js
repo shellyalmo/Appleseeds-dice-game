@@ -19,6 +19,7 @@ newGameBtn.onclick = function () {
 
 // When the user clicks on start game button, close the modal
 startGameBtn.onclick = function () {
+  openingSound.pause();
   modal.style.display = "none";
 };
 
