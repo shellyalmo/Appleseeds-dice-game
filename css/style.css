@@ -163,10 +163,10 @@ body {
   top: 45rem;
 }
 .current-player1 {
-  left: 20rem;
+  left: 30rem;
 }
 .current-player2 {
-  right: 20rem;
+  right: 30rem;
 }
 
 .btn {
@@ -207,9 +207,7 @@ body {
   list-style: disc;
 }
 .dice-opening-screen {
-  width: 80%;
-
-  float: right;
+  width: 60%;
 }
 .modal-instructions-content {
   width: 30s0rem;
