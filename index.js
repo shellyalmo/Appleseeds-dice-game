@@ -48,6 +48,15 @@ const openingSound = document.querySelector("#opening-screen-sound");
 const sadSound = document.querySelector("#sad-sound");
 const switchSound = document.querySelector("#switch-turn-sound");
 
+[1, 2].forEach((player) => {
+  let storage = localStorage.getItem("roll_dice");
+  if (storage) {
+    let scores = JSON.parse(storage);
+    document.querySelector(`#player${player}WinCount`).innerText =
+      scores[`player${player}WinCount`];
+  }
+});
+
 /*functions*/
 /**
  * autoplay opening music when page loads
@@ -112,18 +121,28 @@ function checkTargetScore() {
 function printWinner() {
   const winnerH2 = document.createElement("h2");
   winnerH2.innerText = "WINNER!";
+  let scores = JSON.parse(
+    localStorage.getItem("roll_dice") ||
+      JSON.stringify({
+        player1WinCount: 0,
+        player2WinCount: 0,
+      })
+  );
   if (player1.isWinner === true) {
     //add sound effect
     winningSound.play();
     player1Div.appendChild(winnerH2);
-    document.getElementById("roll-dice-btn").disabled = true;
-    document.getElementById("hold-btn").disabled = true;
+    scores.player1WinCount += 1;
   } else if (player2.isWinner === true) {
     //add sound effect
     winningSound.play();
     player2Div.appendChild(winnerH2);
+    scores.player2WinCount += 1;
+  }
+  if (player1.isWinner || player2.isWinner) {
     document.getElementById("roll-dice-btn").disabled = true;
     document.getElementById("hold-btn").disabled = true;
+    localStorage.setItem("roll_dice", JSON.stringify(scores));
   }
 }
 
