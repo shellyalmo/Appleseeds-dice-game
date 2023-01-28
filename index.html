@@ -24,31 +24,46 @@
       <!-- Modal content -->
       <div class="modal-content">
         <button class="btn close" id="start-game-btn">Start Game!</button>
-
-        <span
-          ><strong>Game instructions:</strong>
-          <ul>
-            <li>
-              In your turn - roll the dice (at least once) and accumulate the
-              result in "current".
-            </li>
-            <li>
-              You can roll again or click "Hold" to save the points from
-              "Current" and end the turn.
-            </li>
-            <li>
-              Note! if you get 6-6 you will lose all points from "Current" and
-              the turn will go to your opponent.
-            </li>
-            <li>
-              If you managed to reach exactly the target score - you win! If you
-              passed it - you lose.
-            </li>
-          </ul>
-        </span>
-        <div class="target-score-input">
-          <label for="targetscore">Target Score:</label>
-          <input type="number" id="targetscore" name="targetscore" />
+        <div class="modal-instructions">
+          <div class="modal-instructions-content">
+            <span
+              ><strong>Game instructions:</strong>
+              <ul>
+                <li>
+                  In your turn - roll the dice (at least once) and accumulate
+                  the result in "current".
+                </li>
+                <li>
+                  You can roll again or click "Hold" to save the points from
+                  "Current" and end the turn.
+                </li>
+                <li>
+                  Note! if you get 6-6 you will lose all points from "Current"
+                  and the turn will go to your opponent.
+                </li>
+                <li>
+                  If you managed to reach exactly the target score - you win! If
+                  you passed it - you lose.
+                </li>
+              </ul>
+            </span>
+            <div class="target-score-input">
+              <label for="targetscore">Target Score:</label>
+              <input
+                type="number"
+                id="targetscore"
+                name="targetscore"
+                value="100"
+              />
+            </div>
+          </div>
+          <div class="dice-opening-screen">
+            <img
+              class="dice-opening-screen"
+              src="./assets/images/dice-roll-clipart.png"
+              alt=""
+            />
+          </div>
         </div>
       </div>
     </div>
